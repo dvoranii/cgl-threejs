@@ -6,6 +6,29 @@ H4: 2.083rem
 H5: 1.736rem
 H6: 1.446rem
 Body text: 1rem
+
+SPACING:
+
+Hero Banner Title: 36px
+Hero Banner Subtitle: 24px
+Call to Action Button: 18px (with appropriate padding around the text)
+Section Headings: 28px
+Subheadings: 22px
+Body Text: 16px
+Bullet Points/List Items: 16px
+Image Captions: 14px
+Footer Text: 14px
+Spacing between elements is crucial for readability and overall visual appeal. As a general rule, you can use the following spacing guidelines:
+
+Space between Hero Banner Title and Subtitle: 16px
+Space between Subtitle and Call to Action Button: 24px
+Space between Section Headings and Subheadings: 12px
+Space between Subheadings and Body Text: 16px
+Space between Body Text and Bullet Points/List Items: 8px
+Space between Bullet Points/List Items: 8px
+Space between Body Text and Image Captions: 12px
+Space between Image Captions and the next element: 12px
+
 */
 
 /* color: #8fd6ab; */
@@ -25,19 +48,25 @@ body {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 nav {
   height: 12vh;
   padding: 10px;
   background-color: grey;
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
+  position: sticky;
 }
 
 nav::before {
@@ -61,8 +90,15 @@ nav::before {
 .nav-menu {
   display: flex;
   list-style: none;
-  padding-right: 60px;
+  margin-right: 60px;
+  font-size: clamp(1rem, 2vw, 1.446rem);
 }
+
+/* @media screen and (max-width: 1650px) {
+  .nav-menu {
+    font-size: 12px;
+  }
+} */
 
 .nav-menu > li {
   padding: 10px;
@@ -104,6 +140,7 @@ nav::before {
   padding: 0px 10px 10px 10px;
   font-size: 12px;
   color: black;
+  border-bottom-left-radius: 10px;
 }
 
 .contact-link {
@@ -210,20 +247,32 @@ h5 {
   padding: 20px;
 }
 
+.hero-wrapper {
+  max-height: calc(100vh - 12vh);
+  overflow: hidden;
+}
+
 .cgl-logo {
   opacity: 0;
   width: 80%;
+  object-fit: scale-down;
 }
 
 .cgl-logo.active {
   animation: fadeInSlideLeft 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
-.cgl-logo-no-text {
+.cgl-logo-nav {
   width: 25%;
-  min-width: 200px;
+  min-width: 150px;
   margin-top: 12px;
   margin-left: 40px;
+}
+
+@media screen and (max-width: 650px) {
+  .nav-menu-container {
+    padding: 0px;
+  }
 }
 
 .hero-inner {
@@ -234,7 +283,7 @@ h5 {
 }
 .hero-content p {
   color: white;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .btn-container {
@@ -244,13 +293,13 @@ h5 {
 
 .cta-btn {
   margin-top: 3.2rem;
-  font-size: 2.5rem;
+  font-size: 2.083rem;
   padding: 8px 16px;
   border: none;
   border-radius: 20px;
   letter-spacing: 0.2rem;
   font-weight: bold;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #eee;
   background-color: #0047be;
   box-shadow: 0px 0px 15px 0px #8fd6ab81;
@@ -281,4 +330,10 @@ div.globe-container {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+/* INTRO SECTION */
+
+.intro-section {
+  padding-top: 1.6rem;
 }
